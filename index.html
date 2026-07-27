@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebecca & Elion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    
+   
+    <div id="page1" class="page active">
+      <h2>Rebecca & Elion</h2>
+      <p>Silakan isi nama dan tuliskan 1 message terlebih dahulu.</p>
+      
+      <input type="text" id="userName" placeholder="Masukkan Nama Kamu..." required>
+      <textarea id="userLetter" placeholder="Tuliskan message di sini..." required></textarea>
+      
+      <button onclick="saveLetterAndNext()">Simpan & Lanjut</button>
+
+      <div id="historyBox" class="history-box" style="display: none;">
+        <strong>History Message:</strong>
+        <p id="historyContent" style="margin-top: 5px; margin-bottom: 0;"></p>
+      </div>
+    </div>
+
+    <div id="page2" class="page">
+      <h2>Voting About Rebecca</h2>
+      <p>Pilihlah <strong>2 opsi</strong> di bawah ini:</p>
+
+      <div class="vote-option" onclick="selectVote(this, 'Rebecca Cantik')">Vote 1: Rebecca Cantik</div>
+      <div class="vote-option" onclick="selectVote(this, 'Rebecca Galak')">Vote 2: Rebecca Galak</div>
+      <div class="vote-option" onclick="selectVote(this, 'Rebecca Sayang Elion')">Vote 3: Rebecca Sayang Elion</div>
+
+      <button id="btnVoteNext" onclick="goToPage(3)" disabled>Lanjut ke Galeri</button>
+    </div>
+
+    
+    <div id="page3" class="page">
+      <h2>Galeri Kenangan</h2>
+      
+      <div class="gallery">
+        <img src="elioon.jpeg" alt="foto 1">
+        <img src="rebeccaandelionid.jpeg" alt="Foto 2">
+        <img src="rebeccaa.jpeg" alt="Foto 3">
+      </div>
+
+      <p>Tuliskan First Impression kamu untuk Rebecca & Elion:</p>
+      <textarea id="firstImpression" placeholder="First impression kamu..."></textarea>
+      
+      <button onclick="startTimerPage()">Kirim & Lanjut</button>
+    </div>
+
+    <!-- HALAMAN 4: Timer & Reveal Emoji Love -->
+    <div id="page4" class="page">
+      <h2>Bersiaplah...</h2>
+      <div id="timerDisplay" class="timer">5</div>
+
+      <div id="interactiveArea" style="display: none;">
+        <p>Pencet Love di bawah ini!</p>
+        <div class="heart-btn" onclick="revealName()">💖</div>
+        <h1 id="finalName" class="final-title">Rebecca & Elion 💕</h1>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Menghubungkan ke file JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
